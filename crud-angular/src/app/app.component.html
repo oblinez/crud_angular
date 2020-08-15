@@ -2,19 +2,22 @@
   <div class="container">
     <div class="new-user">
       <h1 class="title">Lista de Clientes</h1>
-      <button class="button button__add">+ Novo Usuário +</button>
+      <button class="button button__add" (click)="openClosePopupAddPerson = true">+ Novo Usuário +</button>
     </div>
 
     <div class="content">
       <div class="client" *ngFor="let client of clients">
         <div class="info">
           <span class="person person__name">Nome: <strong>{{client.name}}</strong></span>
-          <span class="person person__phone">Celular: {{client.celPhone}}</span>
+          <span class="person person__phone">Celular: {{client.phone}}</span>
           <span class="person person__cpf">CPF: {{client.cpf}}</span>
         </div>
         <button class="button button__info">Informações</button>
         <button class="button button__delete">Excluir</button>
       </div>
     </div>
+  </div>
+  <div class="add-person-popup">
+    <add-person-popup *ngIf="openClosePopupAddPerson"></add-person-popup>
   </div>
 </section>

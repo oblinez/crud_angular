@@ -1,38 +1,46 @@
 import { Injectable } from '@angular/core';
 
+import { Person } from './person';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
-  constructor() { }
-  clients =
-  [
+  clientList: Person[];
+
+  mock: Person[] = [
     {
       name: 'Allan Phillipe Grimes Pereira',
-      celPhone: '13 98109 5033',
-      cpf: '058.510.709-27'
+      phone: 13981095033,
+      cpf: '40955193800'
     },
     {
       name: 'teste2',
-      celPhone: '22222222333333333333',
+      phone: 22222222333333333333,
       cpf: '22222222222'
     },
     {
       name: 'teste3',
-      celPhone: '3333333',
+      phone: 3333333,
       cpf: '44444444444'
     },
     {
       name: 'Allan Phillipe Grimes Pereira',
-      celPhone: '13 98109 5033',
-      cpf: '058.510.709-27'
+      phone: 13981095033,
+      cpf: '15851070927'
     },
     {
       name: 'Allan Phillipe Grimes Pereira',
-      celPhone: '13 98109 5033',
-      cpf: '058.510.709-27'
+      phone: 13981095033,
+      cpf: '5535757678684851070927'
     }
+  ];
 
-  ]
+  constructor() {
+    this.clientList = this.mock //apagar no final
+  }
+
+
+
 }
