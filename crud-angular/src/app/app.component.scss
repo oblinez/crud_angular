@@ -62,7 +62,7 @@
 
 .button {
   margin-right: 10px;
-  width: 150px;
+  width: 120px;
   height: 30px;
   border-radius: 3px;
   border: 0;
@@ -70,12 +70,15 @@
   background-color: $buttons;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
+  outline: 0;
 
   &:hover {
     background-color: $buttons-hover;
   }
 
   &__add {
+    width: 140px;
   }
 
 
@@ -84,7 +87,7 @@
 
   }
   &__delete {
-    width: 100px;
+    width: 90px;
   }
 }
 
@@ -92,6 +95,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   position: absolute;
-
 }

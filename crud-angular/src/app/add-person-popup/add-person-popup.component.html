@@ -1,9 +1,43 @@
 <section class="add-person">
+  <div class="title">
+    <h1 class="h1-content">Formulário Cadastro</h1>
+    <button class="close-popup" (click)="closePopup()">X</button>
+  </div>
   <form class="form">
-    <input class="input input__name" type="text" placeholder="Nome" maxlength="64" required>
-    <input class="input input__phone" type="text" placeholder="Celular" maxlength="64" required>
-    <input class="input input__cpf" type="text" placeholder="CPF" maxlength="64" required>
-    <button></button>
-  </form>
+    <div class="input-box">
 
+      <label class="label label__name">Nome Completo:</label>
+      <input
+        class="input input__name"
+        [(ngModel)]="form.name"
+        name="name"
+        type="text"
+        placeholder="Nome"
+        maxlength="64">
+
+      <label class="label label__phone">Celular:</label>
+      <input
+        class="input input__phone"
+        [(ngModel)]="form.phone"
+        mask="+00 (00) 00000-0000"
+        name="phone" id="phone"
+        type="text"
+        placeholder="Celular"
+        maxlength="64">
+
+      <label class="label label__cpf">CPF: <small>(Apenas numero)</small></label>
+      <input
+        class="input input__cpf"
+        [(ngModel)]="form.cpf"
+        mask="000.000.000-99"
+        name="cpf"
+        type="text"
+        placeholder="CPF">
+
+    </div>
+    <div class="apply">
+      <span class="warning">{{msg}}</span>
+      <button class="apply-form" (click)="submit()">Cadastrar</button>
+    </div>
+  </form>
 </section>

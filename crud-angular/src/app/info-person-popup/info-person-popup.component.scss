@@ -7,33 +7,15 @@
   .title  {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-block-start: 0;
     margin-block-end: 0;
     background-color: burlywood;
     border-radius: 5px 5px 0px 0px;
 
-    .close-popup{
-      margin-right: 10px;
-      background-color:  transparent;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 1s;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      outline: 0;
-
-      &:hover {
-        background-color: $buttons;
-      }
-
-    }
-
 
     .h1-content{
-      padding-left: 10px;
+
     }
   }
 
@@ -140,7 +122,15 @@
         &:hover {
           background-color: $buttons-hover;
         }
+
       }
+
     }
+
   }
+
+
+
+
+
 }
