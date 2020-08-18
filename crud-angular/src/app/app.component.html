@@ -2,25 +2,39 @@
   <div class="container">
     <div class="new-user">
       <h1 class="title">Lista de Clientes</h1>
-      <button class="button button__add" (click)="openClosePopupAddPerson = true">+ Novo Usuário +</button>
+      <button class="button button__add" (click)="openAddPopup()">+ Novo Usuário +</button>
     </div>
 
     <div class="content">
-      <div class="client" *ngFor="let client of clients; let i = index">
+      <div class="client" *ngFor="let person of persons; let i = index">
         <div class="info">
-          <span class="person person__name">Nome: <strong>{{client.name}}</strong></span>
-          <span class="person person__phone">Celular: {{client.phone | phone}}</span>
-          <span class="person person__cpf">CPF: {{client.cpf | cpf}}</span>
+          <span class="person person__name">Nome: <strong>{{person.name}}</strong></span>
+          <span class="person person__phone">Celular: {{person.phone | phone}}</span>
+          <span class="person person__cpf">CPF: {{person.cpf | cpf}}</span>
         </div>
-        <button class="button button__info" (click)="infoIndex(i)">Informações</button>
-        <button class="button button__delete">Excluir</button>
+        <button class="button button__info" (click)="openInfoPopup(person)">Informações</button>
+        <button class="button button__delete" (click)="openExcludePopup(person)">Excluir</button>
+
+        <!-- neste contexto -->
       </div>
     </div>
   </div>
   <div class="add-person-popup">
+
     <add-person-popup
       *ngIf="openClosePopupAddPerson"
-      (close)="openClosePopupAddPerson = $event">
-    </add-person-popup>
+      (close)="openClosePopupAddPerson = $event"
+    ></add-person-popup>
+
+    <info-person-popup
+      *ngIf="openClosePopupInfoPerson"
+      (close)="openClosePopupInfoPerson = $event"
+    ></info-person-popup>
+
+    <delete-person-popup-confirmation
+      *ngIf="openClosePopupDeletionConfirmationPerson"
+      (close)="openClosePopupDeletionConfirmationPerson = $event"
+    ></delete-person-popup-confirmation>
+
   </div>
 </section>

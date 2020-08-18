@@ -11,7 +11,7 @@
 .container {
 
   .new-user {
-    width: 100%;
+    width: 550px;
     background-color: $new-user;
     margin: 0;
     display: flex;
@@ -39,6 +39,8 @@
       &+.client {
         border-top: 1px solid $client-div-bar;
       }
+
+
 
       .info {
         margin-right: 10px;

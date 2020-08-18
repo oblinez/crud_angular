@@ -1,23 +1,40 @@
+import { Person } from './../person';
 import { AppService } from './../app.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'info-person-popup',
   templateUrl: './info-person-popup.component.html',
   styleUrls: ['./info-person-popup.component.scss']
 })
-export class InfoPersonPopupComponent implements OnInit {
+export class InfoPersonPopupComponent implements OnInit{
 
-  form = {name: '',  phone: '', cpf: ''}
-  form2;
+  private _appService: AppService
 
-  arrayN: number
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
+  @Input() personIndex: number; //nao esta usando
+
+  personList: Person[];
+  person: Person;
 
   constructor(private AppService: AppService) {
-    this.form2 = AppService.personList
+    // this.personList = AppService.personList
+    this._appService = this.AppService
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.person = {...this.personList[this.personIndex]}
+    console.log(this.personIndex)
+  }
+
+  closePopup() {
+    this.close.emit(false);
+  }
+
+  submit() {
+    // this._appService.updateInfo
+    this.personList[this.personIndex] = this.person;
+    this.closePopup();
   }
 
 }

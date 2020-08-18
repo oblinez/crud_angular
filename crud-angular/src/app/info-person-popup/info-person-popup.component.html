@@ -1,48 +1,43 @@
 <section class="add-person">
   <div class="title">
-    <h1 class="h1-content">Formulário Cadastro</h1>
+    <h1 class="h1-content">Edição de cadastro</h1>
+    <button class="close-popup" (click)="closePopup()">X</button>
   </div>
   <form class="form">
     <div class="input-box">
       <label class="label label__name">Nome Completo:</label>
       <input
       class="input input__name"
-      [(ngModel)]="form[arrayN].name"
+      [(ngModel)]="person.name"
       name="name"
-      id="name"
       type="text"
       placeholder="Nome"
-      maxlength="64"
-      required>
+      autocomplete="off">
 
       <label class="label label__phone">Celular:</label>
       <input
       class="input input__phone"
-      [(ngModel)]="form[arrayN].phone"
+      [(ngModel)]="person.phone"
       mask="+00 (00) 00000-0000"
       name="phone"
-      id="phone"
-      type="number"
+      type="text"
       placeholder="Celular"
-      maxlength="64"
-      required>
+      autocomplete="off">
 
       <label class="label label__cpf">CPF: <small>(Apenas numero)</small></label>
       <input
       class="input input__cpf"
-      [(ngModel)]="form[arrayN].cpf"
+      [(ngModel)]="person.cpf"
+      mask="000.000.000-99"
       name="cpf"
-      id="cpf"
       type="text"
       placeholder="CPF"
-      maxlength="64"
-      required>
-
+      autocomplete="off">
     </div>
 
     <div class="apply">
       <span class="warning"></span>
-      <button class="apply-form" >Cadastrar</button>
+      <button class="apply-form" (click)="submit()" >Aplicar edição</button>
     </div>
   </form>
 </section>

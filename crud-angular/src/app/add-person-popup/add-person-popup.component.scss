@@ -1,6 +1,5 @@
 @import "../../styles.scss";
 .add-person {
-  background-color: aqua;
   width: 464px;
   /* padding-top: 30px; */
 
@@ -33,14 +32,15 @@
 
 
     .h1-content{
+      margin-top: 10px;
+      margin-bottom: 10px;
       padding-left: 10px;
+      font-size: 25px;
     }
   }
 
   .form{
 
-
-    /* background-color: red; */
     border-radius: 0px 0px 5px 5px;
     background-color: rgb(180, 174, 174);
     display: flex;

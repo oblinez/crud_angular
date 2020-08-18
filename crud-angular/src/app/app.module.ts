@@ -8,6 +8,7 @@ import { AddPersonPopupComponent } from './add-person-popup/add-person-popup.com
 import { InfoPersonPopupComponent } from './info-person-popup/info-person-popup.component';
 import { PhonePipe } from './pipes/phone.pipe';
 import { CpfPipe } from './pipes/cpf.pipe';
+import { DeletePersonPopupConfirmationComponent } from './delete-person-popup-confirmation/delete-person-popup-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CpfPipe } from './pipes/cpf.pipe';
     InfoPersonPopupComponent,
     PhonePipe,
     CpfPipe,
+    DeletePersonPopupConfirmationComponent,
   ],
   imports: [
     BrowserModule,

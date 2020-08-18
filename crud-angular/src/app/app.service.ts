@@ -1,6 +1,4 @@
-import { AppComponent } from './app.component';
 import { Injectable } from '@angular/core';
-
 import { Person } from './person';
 
 @Injectable({
@@ -8,43 +6,24 @@ import { Person } from './person';
 })
 export class AppService {
 
-  openClosePopupAddPerson: boolean = false;
-  openClosePopupInfoPerson: boolean = false;
+/*   openClosePopupAddPerson: boolean = false;
+  openClosePopupInfoPerson: boolean = false; */
 
-  arrayN: number
+  // arrayN: number
+  // personToDelete: Person
+  // personToEdit: Person
 
   personList: Person[] = [];
 
-  // mock: Person[] = [
-  //   {
-  //     name: 'Allan Phillipe Grimes Pereira',
-  //     phone: 13981095033,
-  //     cpf: '40955193800'
-  //   },
-  //   {
-  //     name: 'teste2',
-  //     phone: 22222222333333333333,
-  //     cpf: '22222222222'
-  //   },
-  //   {
-  //     name: 'teste3',
-  //     phone: 3333333,
-  //     cpf: '44444444444'
-  //   },
-  //   {
-  //     name: 'Allan Phillipe Grimes Pereira',
-  //     phone: 13981095033,
-  //     cpf: '15851070927'
-  //   },
-  //   {
-  //     name: 'Allan Phillipe Grimes Pereira',
-  //     phone: 13981095033,
-  //     cpf: '5535757678684851070927'
-  //   }
-  // ];
+  constructor() {
+  }
 
-  constructor() { }
+  // addPerson(person: Person) {
+  //   this.personList.push(person);
+  // }
 
-
-
+  // deletePerson() {
+  //   // this.personList = this.personList.filter((value, i) => (i != this.personListIndex))
+  //   this.personList = this.personList.filter((value) => (JSON.stringify(value) == JSON.stringify(this.personToDelete)))
+  // }
 }
