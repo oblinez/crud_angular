@@ -11,7 +11,7 @@
       [(ngModel)]="person.name"
       name="name"
       type="text"
-      placeholder="Nome"
+      placeholder="{{nameErrorMsg}}"
       autocomplete="off">
 
       <label class="label label__phone">Celular:</label>
@@ -21,7 +21,7 @@
       mask="+00 (00) 00000-0000"
       name="phone"
       type="text"
-      placeholder="Celular"
+      placeholder="{{phoneErrorMsg}}"
       autocomplete="off">
 
       <label class="label label__cpf">CPF: <small>(Apenas numero)</small></label>
@@ -31,7 +31,7 @@
       mask="000.000.000-99"
       name="cpf"
       type="text"
-      placeholder="CPF"
+      placeholder="{{cpfErrorMsg}}"
       autocomplete="off">
     </div>
 

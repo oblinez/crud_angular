@@ -10,9 +10,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class DeletePersonPopupConfirmationComponent implements OnInit {
   @Output() close: EventEmitter<boolean> = new EventEmitter()
-  // @Output() newList: EventEmitter<Person[]> = new EventEmitter()
-  // @Input() person: Person
-  // @Input() personList: Person[]
 
   private _appService: AppService;
 
@@ -20,7 +17,6 @@ export class DeletePersonPopupConfirmationComponent implements OnInit {
 
 
   constructor(private AppService: AppService, private AppComponent: AppComponent ) {
-    // this.victim = AppService.personList
     this._appService = this.AppService;
 
   }
@@ -29,7 +25,6 @@ export class DeletePersonPopupConfirmationComponent implements OnInit {
   }
 
   exclude() {
-    // this.victim = this.personList.filter((value, i) => (i !== this.personIndex))
     this.close.emit(false)
     this.AppComponent.deletePerson()
     this.AppComponent.updatePersonList()

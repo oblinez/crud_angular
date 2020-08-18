@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { Person } from './../person';
 import { AppService } from './../app.service';
 import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
@@ -9,22 +10,22 @@ import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 })
 export class InfoPersonPopupComponent implements OnInit{
 
-  private _appService: AppService
-
   @Output() close: EventEmitter<boolean> = new EventEmitter();
-  @Input() personIndex: number; //nao esta usando
+  @Input() personIndexToEdit: number;
 
   personList: Person[];
   person: Person;
+  nameErrorMsg: string
+  phoneErrorMsg: string
+  cpfErrorMsg: string
 
-  constructor(private AppService: AppService) {
-    // this.personList = AppService.personList
-    this._appService = this.AppService
+  constructor(private AppService: AppService, private AppComponent: AppComponent) {
+    this.personList = this.AppService.personList
   }
 
   ngOnInit() {
-    this.person = {...this.personList[this.personIndex]}
-    console.log(this.personIndex)
+    this.person = {...this.personList[this.personIndexToEdit]}
+    console.log(this.person)
   }
 
   closePopup() {
@@ -32,8 +33,33 @@ export class InfoPersonPopupComponent implements OnInit{
   }
 
   submit() {
-    // this._appService.updateInfo
-    this.personList[this.personIndex] = this.person;
+    if (!this.person.name)
+    {
+      this.nameErrorMsg = "Campo Nome Obrigatório"
+      return
+    }
+
+    if (!this.person.phone)
+    {
+      this.phoneErrorMsg = "Campo Celular Obrigatório"
+      return
+    }else if (this.person.phone.length <= 12 || this.person.phone.length >= 14) {
+      this.person.phone = ''
+      this.phoneErrorMsg = "Campo Celular são 13 Dígitos"
+      return
+    }
+
+    if (!this.person.cpf)
+    {
+      this.cpfErrorMsg = "Campo Cpf Obrigatório"
+      return
+    }else if (this.person.cpf.length <= 10 || this.person.cpf.length >= 12) {
+      this.person.cpf = ''
+      this.cpfErrorMsg = "Campo CPF são 11 Dígitos"
+      return
+    }
+    this.AppService.personList[this.personIndexToEdit] = this.person;
+    this.AppComponent.updatePersonList()
     this.closePopup();
   }
 

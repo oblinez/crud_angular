@@ -12,8 +12,8 @@
           <span class="person person__phone">Celular: {{person.phone | phone}}</span>
           <span class="person person__cpf">CPF: {{person.cpf | cpf}}</span>
         </div>
-        <button class="button button__info" (click)="openInfoPopup(person)">Informações</button>
-        <button class="button button__delete" (click)="openExcludePopup(person)">Excluir</button>
+        <button class="button button__info" (click)="openInfoPopup(person, i)">Informações</button>
+        <button class="button button__delete" (click)="openExcludePopup(person, i)">Excluir</button>
 
         <!-- neste contexto -->
       </div>
@@ -29,6 +29,7 @@
     <info-person-popup
       *ngIf="openClosePopupInfoPerson"
       (close)="openClosePopupInfoPerson = $event"
+      [personIndexToEdit]="personIndexToEdit"
     ></info-person-popup>
 
     <delete-person-popup-confirmation

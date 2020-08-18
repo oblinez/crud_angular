@@ -21,10 +21,9 @@ export class AppComponent implements OnInit {
   personListIndex: number
 
   personToDelete: Person
-  personToEdit: Person
+  personIndexToEdit: number
 
   constructor(private AppService: AppService) {
-    // this.persons = AppService.personList
     this._appService = this.AppService;
   }
 
@@ -32,15 +31,14 @@ export class AppComponent implements OnInit {
     this.updatePersonList()
   }
 
-  openInfoPopup(person: Person) {
-    this.personToEdit = person
+  openInfoPopup(person: Person, index: number) {
+    this.personIndexToEdit = index
     this.openClosePopupInfoPerson = true
   }
 
   openExcludePopup(person: Person) {
     this.personToDelete = person
     this.openClosePopupDeletionConfirmationPerson = true;
-    /* this.persons = this.persons.filter((value, i) => (i !== index)) */
   }
 
   openAddPopup() {
@@ -57,7 +55,6 @@ export class AppComponent implements OnInit {
   }
 
   deletePerson() {
-    // this.personList = this.personList.filter((value, i) => (i != this.personListIndex))
     this.persons = this.persons.filter((value) => (JSON.stringify(value) != JSON.stringify(this.personToDelete)))
   }
 }

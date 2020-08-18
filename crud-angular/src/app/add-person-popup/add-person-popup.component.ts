@@ -18,13 +18,11 @@ export class AddPersonPopupComponent implements OnInit {
 
   form: Person = {name: undefined, phone: undefined, cpf: undefined};
   accountDuplicateErrorMsg: string;
-  // personList: Person[];
   nameErrorMsg: string
   phoneErrorMsg: string
   cpfErrorMsg: string
 
   constructor(private AppService: AppService, private AppComponent: AppComponent) {
-    // this.personList = AppService.personList;
     this._appService = this.AppService;
   }
 
@@ -58,20 +56,19 @@ export class AddPersonPopupComponent implements OnInit {
       return
     }
 
-    // const test = this._appService.personList.every((value) => (JSON.stringify(value) != JSON.stringify(this.form)))
-    // if (test) {
-      // this.personList.push(this.form)
+    const test = this._appService.personList.every((value) => (JSON.stringify(value) != JSON.stringify(this.form)))
+    if (test) {
       this.AppComponent.addPerson(this.form);
       this.close.emit(false)
       this.AppComponent.updatePersonList()
-    // }else{
-    //   this.accountDuplicateErrorMsg = "Cadastro já existe"
-    // }
+    }else{
+      this.accountDuplicateErrorMsg = "Cadastro já existe"
+    }
   }
 
   closePopup() {
     this.close.emit(false);
   }
 
-}
 
+}
