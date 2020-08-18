@@ -30,16 +30,18 @@
           </span>
         </div>
 
-        <button
-          class="button button__info"
-          (click)="openInfoPopup(person, i)">
-          Informações
-        </button>
-        <button
-          class="button button__delete"
-          (click)="openExcludePopup(person, i)">
-          Excluir
-        </button>
+        <div class="buttons">
+          <button
+            class="button button__info"
+            (click)="openInfoPopup(person, i)">
+            Informações
+          </button>
+          <button
+            class="button button__delete"
+            (click)="openExcludePopup(person, i)">
+            Excluir
+          </button>
+        </div>
 
       </div>
     </div>

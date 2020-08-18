@@ -1,8 +1,8 @@
-import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core'
 
-import { AppComponent } from './../app.component';
-import { Person } from './../person';
-import { AppService } from './../app.service';
+import { AppComponent } from './../app.component'
+import { Person } from './../person'
+import { AppService } from './../app.service'
 
 @Component({
   selector: 'info-person-popup',
@@ -11,10 +11,10 @@ import { AppService } from './../app.service';
 })
 export class InfoPersonPopupComponent implements OnInit{
 
-  @Output() close: EventEmitter<boolean> = new EventEmitter();
-  @Input() personIndexToEdit: number;
+  @Output() close: EventEmitter<boolean> = new EventEmitter()
+  @Input() personIndexToEdit: number
 
-  personList: Person[];
+  personList: Person[]
   person: Person;
   nameErrorMsg: string
   phoneErrorMsg: string
@@ -30,14 +30,14 @@ export class InfoPersonPopupComponent implements OnInit{
   }
 
   closePopup() {
-    this.close.emit(false);
+    this.close.emit(false)
   }
 
   submit() {
     if (!this.inputCheck()) return
-    this.AppService.personList[this.personIndexToEdit] = this.person;
+    this.AppService.personList[this.personIndexToEdit] = this.person
     this.AppComponent.updatePersonList()
-    this.closePopup();
+    this.closePopup()
   }
 
   inputCheck()  {

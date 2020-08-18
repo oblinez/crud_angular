@@ -75,6 +75,10 @@
         padding-left: 5px;
         padding-right: 5px;
 
+        &::placeholder  {
+          color: $placehouder-color;
+        }
+
         &:focus {
           border-bottom: 1px solid $buttons;
           margin-bottom: 9px;
@@ -86,7 +90,6 @@
       margin-right: 18px;
 
       .apply-form {
-        margin-right: 0%;
         width: 120px;
         height: 30px;
         border-radius: 3px;
@@ -105,3 +108,15 @@
     }
   }
 }
+
+@media (max-width: 767px){
+  .info-person {
+    width: 98vw;
+
+    .submit-edit-form {
+    margin: 0 !important;
+    }
+  }
+}
+
+

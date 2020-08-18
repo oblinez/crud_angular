@@ -1,6 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core'
 
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../app.component'
 
 @Component({
   selector: 'delete-person-popup-confirmation',

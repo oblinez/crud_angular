@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import { AppService } from './app.service';
-import { Person } from './person';
+import { AppService } from './app.service'
+import { Person } from './person'
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,34 @@ import { Person } from './person';
 export class AppComponent implements OnInit {
   private _appService: AppService
 
-  persons: Person[] = []
+  persons: Person[] =
+  [
+    {
+      name: '1',
+      phone: '1111111111111',
+      cpf: '11111111111'
+    },
+    {
+      name: '1',
+      phone: '1111111111111',
+      cpf: '11111111111'
+    },
+    {
+      name: '1',
+      phone: '1111111111111',
+      cpf: '11111111111'
+    },
+    {
+      name: '1',
+      phone: '1111111111111',
+      cpf: '11111111111'
+    }
 
-  openClosePopupAddPerson: boolean = false;
-  openClosePopupInfoPerson: boolean = false;
-  openClosePopupDeletionConfirmationPerson: boolean = false;
+  ]
+
+  openClosePopupAddPerson: boolean = false
+  openClosePopupInfoPerson: boolean = false
+  openClosePopupDeletionConfirmationPerson: boolean = false
 
   personListIndex: number
 
@@ -24,7 +47,7 @@ export class AppComponent implements OnInit {
   personIndexToEdit: number
 
   constructor(private AppService: AppService) {
-    this._appService = this.AppService;
+    this._appService = this.AppService
   }
 
   ngOnInit() {
@@ -38,7 +61,7 @@ export class AppComponent implements OnInit {
 
   openExcludePopup(person: Person) {
     this.personToDelete = person
-    this.openClosePopupDeletionConfirmationPerson = true;
+    this.openClosePopupDeletionConfirmationPerson = true
   }
 
   openAddPopup() {
@@ -50,7 +73,7 @@ export class AppComponent implements OnInit {
   }
 
   addPerson(person: Person) {
-    this.persons.push(person);
+    this.persons.push(person)
   }
 
   deletePerson() {

@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 
-import { AppComponent } from '../app.component';
-import { AppService } from './../app.service';
-import { Person } from './../person';
+import { AppComponent } from '../app.component'
+import { AppService } from './../app.service'
+import { Person } from './../person'
 
 @Component({
   selector: 'add-person-popup',
@@ -12,18 +12,18 @@ import { Person } from './../person';
 
 export class AddPersonPopupComponent implements OnInit {
 
-  @Output() close: EventEmitter<boolean> = new EventEmitter();
+  @Output() close: EventEmitter<boolean> = new EventEmitter()
 
   private _appService: AppService;
 
-  form: Person = {name: undefined, phone: undefined, cpf: undefined};
-  accountDuplicateErrorMsg: string;
+  form: Person = {name: undefined, phone: undefined, cpf: undefined}
+  accountDuplicateErrorMsg: string
   nameErrorMsg: string
   phoneErrorMsg: string
   cpfErrorMsg: string
 
   constructor(private AppService: AppService, private AppComponent: AppComponent) {
-    this._appService = this.AppService;
+    this._appService = this.AppService
   }
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class AddPersonPopupComponent implements OnInit {
   }
 
   closePopup() {
-    this.close.emit(false);
+    this.close.emit(false)
   }
 
   personDuplicateCheck()  {
@@ -44,7 +44,7 @@ export class AddPersonPopupComponent implements OnInit {
   }
 
   addPersonToArray()  {
-    this.AppComponent.addPerson(this.form);
+    this.AppComponent.addPerson(this.form)
     this.close.emit(false)
     this.AppComponent.updatePersonList()
   }
