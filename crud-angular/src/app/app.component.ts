@@ -12,30 +12,7 @@ import { Person } from './person'
 export class AppComponent implements OnInit {
   private _appService: AppService
 
-  persons: Person[] =
-  [
-    {
-      name: '1',
-      phone: '1111111111111',
-      cpf: '11111111111'
-    },
-    {
-      name: '1',
-      phone: '1111111111111',
-      cpf: '11111111111'
-    },
-    {
-      name: '1',
-      phone: '1111111111111',
-      cpf: '11111111111'
-    },
-    {
-      name: '1',
-      phone: '1111111111111',
-      cpf: '11111111111'
-    }
-
-  ]
+  persons: Person[] = []
 
   openClosePopupAddPerson: boolean = false
   openClosePopupInfoPerson: boolean = false
