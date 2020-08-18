@@ -1,13 +1,16 @@
-//@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
-/* @import "./reset.scss"; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 
 $buttons: rgb(125, 101, 180);
 $buttons-hover: rgb(104, 81, 160);
-$background: dimgrey;
+$background: rgb(105, 105, 105);
 $client-div-bar: rgb(171, 184, 196);
 $content: rgb(235, 235, 235);
 $new-user: rgb(148, 148, 148);
+$color-text: rgb(0, 0, 0);
+$form-add-background: rgb(180, 174, 174);
+$add-person-title-color: rgb(222, 184, 135);
+$delete-person-border-color: rgb(165, 42, 42);
 
 html, body  {
   font-size: 100%;
@@ -16,7 +19,7 @@ html, body  {
   height: 100%;
 }
 
+
 *{
-  //font-family: 'Rubik', sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Roboto';
 }

@@ -1,26 +1,51 @@
 <section class="app">
+
   <div class="container">
+
     <div class="new-user">
       <h1 class="title">Lista de Clientes</h1>
-      <button class="button button__add" (click)="openAddPopup()">+ Novo Usuário +</button>
+      <button
+        class="button button__add"
+        (click)="openAddPopup()">
+        + Novo Usuário +
+      </button>
     </div>
 
     <div class="content">
       <div class="client" *ngFor="let person of persons; let i = index">
         <div class="info">
-          <span class="person person__name">Nome: <strong>{{person.name}}</strong></span>
-          <span class="person person__phone">Celular: {{person.phone | phone}}</span>
-          <span class="person person__cpf">CPF: {{person.cpf | cpf}}</span>
-        </div>
-        <button class="button button__info" (click)="openInfoPopup(person, i)">Informações</button>
-        <button class="button button__delete" (click)="openExcludePopup(person, i)">Excluir</button>
+          <span
+            class="person person__name">
+            Nome: <strong>{{person.name}}</strong>
+          </span>
 
-        <!-- neste contexto -->
+          <span
+            class="person person__phone">
+            Celular: {{person.phone | phone}}
+          </span>
+
+          <span
+            class="person person__cpf">
+            CPF: {{person.cpf | cpf}}
+          </span>
+        </div>
+
+        <button
+          class="button button__info"
+          (click)="openInfoPopup(person, i)">
+          Informações
+        </button>
+        <button
+          class="button button__delete"
+          (click)="openExcludePopup(person, i)">
+          Excluir
+        </button>
+
       </div>
     </div>
   </div>
-  <div class="add-person-popup">
 
+  <div class="crud-popups-pagination">
     <add-person-popup
       *ngIf="openClosePopupAddPerson"
       (close)="openClosePopupAddPerson = $event"
@@ -36,6 +61,6 @@
       *ngIf="openClosePopupDeletionConfirmationPerson"
       (close)="openClosePopupDeletionConfirmationPerson = $event"
     ></delete-person-popup-confirmation>
-
   </div>
+
 </section>

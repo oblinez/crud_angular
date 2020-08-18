@@ -7,8 +7,6 @@ export class CpfPipe implements PipeTransform {
 
   transform(cpf: string): string {
 
-    if (cpf == '' || !cpf) return
-
     const first = cpf.substring(0, 3);
     const second = cpf.substring(3, 6);
     const third = cpf.substring(6, 9);

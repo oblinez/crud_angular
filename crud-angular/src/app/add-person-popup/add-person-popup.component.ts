@@ -30,45 +30,41 @@ export class AddPersonPopupComponent implements OnInit {
   }
 
   submit() {
-    if (!this.form.name)
-    {
-      this.nameErrorMsg = "Campo Nome Obrigatório"
-      return
-    }
-
-    if (!this.form.phone)
-    {
-      this.phoneErrorMsg = "Campo Celular Obrigatório"
-      return
-    }else if (this.form.phone.length <= 12 || this.form.phone.length >= 14) {
-      this.form.phone = ''
-      this.phoneErrorMsg = "Campo Celular são 13 Dígitos"
-      return
-    }
-
-    if (!this.form.cpf)
-    {
-      this.cpfErrorMsg = "Campo Cpf Obrigatório"
-      return
-    }else if (this.form.cpf.length <= 10 || this.form.cpf.length >= 12) {
-      this.form.cpf = ''
-      this.cpfErrorMsg = "Campo CPF são 11 Dígitos"
-      return
-    }
-
-    const test = this._appService.personList.every((value) => (JSON.stringify(value) != JSON.stringify(this.form)))
-    if (test) {
-      this.AppComponent.addPerson(this.form);
-      this.close.emit(false)
-      this.AppComponent.updatePersonList()
-    }else{
-      this.accountDuplicateErrorMsg = "Cadastro já existe"
-    }
+    if (this.personDuplicateCheck() && this.inputCheck()) this.addPersonToArray()
   }
 
   closePopup() {
     this.close.emit(false);
   }
 
+  personDuplicateCheck()  {
+    const test = this._appService.personList.every((value) => (JSON.stringify(value) != JSON.stringify(this.form)))
+    if (!test) this.accountDuplicateErrorMsg = "Cadastro já existe"
+    return test
+  }
 
+  addPersonToArray()  {
+    this.AppComponent.addPerson(this.form);
+    this.close.emit(false)
+    this.AppComponent.updatePersonList()
+  }
+
+  inputCheck()  {
+    if (!this.form.name) { this.nameErrorMsg = "Campo nome obrigatório"; return }
+    if (!this.form.phone) { this.phoneErrorMsg = "Campo celular obrigatório"; return }
+    else if (this.form.phone.length <= 12 || this.form.phone.length >= 14)
+    {
+      this.form.phone = ''
+      this.phoneErrorMsg = "Campo celular são 13 dígitos"
+      return
+    }
+    if (!this.form.cpf) { this.cpfErrorMsg = "Campo CPF obrigatório"; return }
+    else if (this.form.cpf.length <= 10 || this.form.cpf.length >= 12)
+    {
+      this.form.cpf = ''
+      this.cpfErrorMsg = "Campo CPF são 11 dígitos"
+      return
+    }
+    return true
+  }
 }

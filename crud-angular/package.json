@@ -1,6 +1,10 @@
 {
   "name": "crud-angular",
   "version": "0.0.0",
+  "author": {
+    "name": "Allan Phillipe Grimes Pereira",
+    "email": "oblinez1@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

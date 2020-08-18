@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     this._appService = this.AppService;
   }
 
-  ngOnInit()  {
+  ngOnInit() {
     this.updatePersonList()
   }
 
@@ -45,10 +45,9 @@ export class AppComponent implements OnInit {
     this.openClosePopupAddPerson = true
   }
 
-  updatePersonList(){
+  updatePersonList() {
     this._appService.personList = this.persons
   }
-
 
   addPerson(person: Person) {
     this.persons.push(person);

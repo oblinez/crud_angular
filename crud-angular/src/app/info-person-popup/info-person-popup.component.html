@@ -1,8 +1,10 @@
-<section class="add-person">
+<section class="info-person">
+
   <div class="title">
-    <h1 class="h1-content">Edição de cadastro</h1>
-    <button class="close-popup" (click)="closePopup()">X</button>
+    <h1 class="title title__text">Edição de cadastro</h1>
+    <button class="title title__close-button" (click)="closePopup()">X</button>
   </div>
+
   <form class="form">
     <div class="input-box">
       <label class="label label__name">Nome Completo:</label>
@@ -35,8 +37,7 @@
       autocomplete="off">
     </div>
 
-    <div class="apply">
-      <span class="warning"></span>
+    <div class="submit-edit-form">
       <button class="apply-form" (click)="submit()" >Aplicar edição</button>
     </div>
   </form>
