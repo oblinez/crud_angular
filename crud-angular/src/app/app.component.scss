@@ -13,6 +13,7 @@
 
   .new-user {
     width: 100%;
+    min-width: 30rem;
     background-color: $new-user;
     margin: 0;
     display: flex;
@@ -99,6 +100,7 @@
 
       .new-user{
         width: 98vw;
+        min-width: 9rem;
       }
 
       .content{
