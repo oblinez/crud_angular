@@ -48,7 +48,6 @@
     padding-right: 10px;
     padding-top: 20px;
 
-
     .input-box{
       width: 60%;
 
@@ -73,7 +72,7 @@
       padding-right: 5px;
 
       &::placeholder  {
-        color: $placehouder-color;
+        color: $placeholder-color;
       }
 
       &:focus {

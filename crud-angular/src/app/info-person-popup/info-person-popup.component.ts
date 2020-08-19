@@ -15,7 +15,7 @@ export class InfoPersonPopupComponent implements OnInit{
   @Input() personIndexToEdit: number
 
   personList: Person[]
-  person: Person;
+  person: Person
   nameErrorMsg: string
   phoneErrorMsg: string
   cpfErrorMsg: string
@@ -26,7 +26,6 @@ export class InfoPersonPopupComponent implements OnInit{
 
   ngOnInit() {
     this.person = {...this.personList[this.personIndexToEdit]}
-    console.log(this.person)
   }
 
   closePopup() {
@@ -58,7 +57,6 @@ export class InfoPersonPopupComponent implements OnInit{
     }
 
     return true
-
   }
 
 }

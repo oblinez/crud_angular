@@ -32,7 +32,6 @@
       }
     }
 
-
     &__text {
       margin-top: 10px;
       margin-bottom: 10px;
@@ -61,7 +60,6 @@
         font-size: 16px;
       }
 
-
       .input  {
         display: block;
         width: 100%;
@@ -76,7 +74,7 @@
         padding-right: 5px;
 
         &::placeholder  {
-          color: $placehouder-color;
+          color: $placeholder-color;
         }
 
         &:focus {
@@ -118,5 +116,3 @@
     }
   }
 }
-
-
