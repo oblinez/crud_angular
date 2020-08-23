@@ -1,24 +1,25 @@
 <section class="info-person">
 
-  <div class="title">
-    <h1 class="title title__text">Edição de cadastro</h1>
-    <button class="title title__close-button" (click)="closePopup()">X</button>
+  <div class="title-container">
+    <h1 class="title-container__title--text">Edição de Usuário</h1>
+    <button class="title-container__close-button--text" (click)="closePopup()">X</button>
   </div>
 
-  <form class="form">
-    <div class="input-box">
-      <label class="label label__name">Nome Completo:</label>
+  <form class="form-container">
+    <div class="form-container-inputs">
+
+      <label class="form-container-inputs__label">Nome Completo:</label>
       <input
-        class="input input__name"
+        class="form-container-inputs__inputs"
         [(ngModel)]="person.name"
         name="name"
         type="text"
         placeholder="{{nameErrorMsg}}"
         autocomplete="off">
 
-      <label class="label label__phone">Celular:</label>
+      <label class="form-container-inputs__label">Celular:</label>
       <input
-        class="input input__phone"
+        class="form-container-inputs__inputs"
         [(ngModel)]="person.phone"
         mask="+00 (00) 00000-0000"
         name="phone"
@@ -26,9 +27,9 @@
         placeholder="{{phoneErrorMsg}}"
         autocomplete="off">
 
-      <label class="label label__cpf">CPF: <small>(Apenas numero)</small></label>
+      <label class="form-container-inputs__label">CPF: <small>(Apenas números)</small></label>
       <input
-        class="input input__cpf"
+        class="form-container-inputs__inputs"
         [(ngModel)]="person.cpf"
         mask="000.000.000-99"
         name="cpf"
@@ -37,8 +38,8 @@
         autocomplete="off">
     </div>
 
-    <div class="submit-edit-form">
-      <button class="apply-form" (click)="submit()">Aplicar edição</button>
+    <div class="apply-button-container">
+      <button class="apply-button-container__submit--button" (click)="submit()">Aplicar edição</button>
     </div>
   </form>
 </section>

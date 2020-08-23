@@ -3,7 +3,7 @@
 .info-person {
   width: 464px;
 
-  .title  {
+  .title-container  {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +12,14 @@
     background-color: $add-person-title-color;
     border-radius: 5px 5px 0px 0px;
 
-    &__close-button {
+    &__title--text  {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      font-size: 25px;
+    }
+
+    &__close-button--text {
       margin-right: 10px;
       background-color:  transparent;
       border: none;
@@ -31,16 +38,9 @@
         background-color: $buttons;
       }
     }
-
-    &__text {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding-left: 10px;
-      font-size: 25px;
-    }
   }
 
-  .form{
+  .form-container {
     border-radius: 0px 0px 5px 5px;
     background-color: $form-add-background;
     display: flex;
@@ -51,16 +51,14 @@
     padding-right: 10px;
     padding-top: 20px;
 
-    .input-box{
+    .form-container-inputs{
       width: 60%;
 
-      .label {
-        margin-top: 50px;
-        color: $color-text;
-        font-size: 16px;
+      &__label {
+        font-size: .9rem;
       }
 
-      .input  {
+      &__inputs  {
         display: block;
         width: 100%;
         border: none;
@@ -83,25 +81,25 @@
         }
       }
     }
+  }
 
-    .submit-edit-form {
-      margin-right: 18px;
+  .apply-button-container {
+    margin-right: 18px;
 
-      .apply-form {
-        width: 120px;
-        height: 30px;
-        border-radius: 3px;
-        border: 0;
-        transition: background 1s;
-        background-color: $buttons;
-        text-decoration: none;
-        font-weight: 500;
-        cursor: pointer;
-        justify-self: center;
+    &__submit--button {
+      width: 120px;
+      height: 30px;
+      border-radius: 3px;
+      border: 0;
+      transition: background 1s;
+      background-color: $buttons;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      justify-self: center;
 
-        &:hover {
-          background-color: $buttons-hover;
-        }
+      &:hover {
+        background-color: $buttons-hover;
       }
     }
   }
@@ -111,8 +109,8 @@
   .info-person {
     width: 98vw;
 
-    .submit-edit-form {
-    margin: 0 !important;
+    .apply-button-container {
+    margin: 0;
     }
   }
 }

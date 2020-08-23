@@ -6,10 +6,10 @@
   background-color: $content;
   width: 300px;
 
-  .deletion-question{
+  .text-img-container{
     margin-bottom: 10px;
 
-    &__img-warning {
+    &__img {
       display: block;
       margin-left: calc(50% - 25px);
       width: 50px;
@@ -23,14 +23,14 @@
     }
   }
 
-  .button-deletion-container  {
+  .buttons-container  {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 5px;
     margin-bottom: 5px;
 
-    .button-chose {
+    &__buttons {
       grid-area: 2;
       margin-right: 0%;
       width: 130px;

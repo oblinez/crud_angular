@@ -1,23 +1,25 @@
 <section class="add-person">
-  <div class="title">
-    <h1 class="h1-content">Formulário Cadastro</h1>
-    <button class="close-popup" (click)="closePopup()">X</button>
-  </div>
-  <form class="form">
-    <div class="input-box">
 
-      <label class="label label__name">Nome Completo:</label>
+  <div class="title-container">
+    <h1 class="title-container__title--text">Cadastro de Usuários</h1>
+    <button class="title-container__close-button--text" (click)="closePopup()">X</button>
+  </div>
+
+  <form class="form-container">
+    <div class="form-container-inputs">
+
+      <label class="form-container-inputs__label">Nome Completo:</label>
       <input
-        class="input input__name"
+        class="form-container-inputs__inputs"
         [(ngModel)]="form.name"
         name="name"
         type="text"
         placeholder="{{nameErrorMsg}}"
         maxlength="30"
         autocomplete="off">
-      <label class="label label__phone">Celular:</label>
+      <label class="form-container-inputs__label">Celular:</label>
       <input
-        class="input input__phone"
+        class="form-container-inputs__inputs"
         [(ngModel)]="form.phone"
         mask="+00 (00) 00000-0000"
         name="phone"
@@ -26,9 +28,9 @@
         maxlength="64"
         autocomplete="off">
 
-      <label class="label label__cpf">CPF: <small>(Apenas números)</small></label>
+      <label class="form-container-inputs__label">CPF: <small>(Apenas números)</small></label>
       <input
-        class="input input__cpf"
+        class="form-container-inputs__inputs"
         [(ngModel)]="form.cpf"
         mask="000.000.000-99"
         name="cpf"
@@ -37,9 +39,9 @@
         autocomplete="off">
 
     </div>
-    <div class="apply">
-      <span class="warning">{{accountDuplicateErrorMsg}}</span>
-      <button class="apply-form" (click)="submit()">Cadastrar</button>
+    <div class="apply-button-container">
+      <span class="apply-button-container__warning--text">{{accountDuplicateErrorMsg}}</span>
+      <button class="apply-button-container__submit--button" (click)="submit()">Cadastrar</button>
     </div>
   </form>
 </section>
